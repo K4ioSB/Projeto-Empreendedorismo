@@ -109,7 +109,7 @@ body{
     background-color: white;
     margin: 10px;
     width: 20%;
-    height: 80%;
+    height: auto;
 }
 .conteudo-titulo{
     color: #2f8940;
