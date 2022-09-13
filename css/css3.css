@@ -10,7 +10,6 @@
   }
 body{
     background: linear-gradient(270deg , rgb(96, 183, 103) 0%, black 100% );
-    min-height: 100%;
     display: flex;
     flex-direction: column;
     width: 100%;
