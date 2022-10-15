@@ -38,7 +38,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     <meta name="viewport" content="width=device-width, initial-scale=0.30">
     <title >Eco Company</title>
     <link rel='icon' type='image/png' href="./img/Logo_02_Fundo_Transparente.png">
-    <link rel="stylesheet" href="/projetos/Meus_projetos/css/css4.css">
+    <link rel="stylesheet" href="./css/css4.css">
 </head>
 <body>
 <header class="cabecalho">
