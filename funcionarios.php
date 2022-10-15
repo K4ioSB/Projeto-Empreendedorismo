@@ -45,10 +45,10 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
       <img class="logo" src="./img/Logo_02_Fundo_Transparente.png" alt="">
        
     <nav class="menu">
-            <a class="menu-item" href="/projetos/Meus_projetos/index.html">Inicio</a>
-            <a class="menu-item" href="/projetos/Meus_projetos/Sobrenós.html">Sobre nós</a>
-            <a class="menu-item" href="/projetos/Meus_projetos/Contato.html">Contato</a>
-            <a class="menu-item" href="/projetos/Meus_projetos/funcionarios.php">Funcionarios</a>
+            <a class="menu-item" href="./index.html">Inicio</a>
+            <a class="menu-item" href="./Sobrenós.html">Sobre nós</a>
+            <a class="menu-item" href="./Contato.html">Contato</a>
+            <a class="menu-item" href="./funcionarios.php">Funcionarios</a>
     </nav> 
 </header>
     <form class="formulario" method="post" action="">
