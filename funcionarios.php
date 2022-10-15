@@ -1,5 +1,6 @@
 <?php 
-include('acesso.php')
+include('acesso.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -21,7 +22,7 @@ include('acesso.php')
             <a class="menu-item" href="./funcionarios.php" >Funcionarios</a>
     </nav> 
 </header>
-    <form class="formulario" method="post" action="./php/acesso.php">
+    <form class="formulario" method="post" action="">
     <div class="email">
     <label for="">E-mail:</label>
     <input type="email" name="email" required>
