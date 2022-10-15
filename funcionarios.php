@@ -1,6 +1,34 @@
 <?php 
 include('acesso.php');
 
+if(isset($_POST['email']) || isset($_POST['senha'])) {
+    
+    if(strlen($_POST['email']) == 0) {
+    } elseif (strlen($_POST["senha"]) == 0){
+    }
+ else {
+        $email = $mysqli->real_escape_string($_POST["email"]);
+        $senha = $mysqli->real_escape_string($_POST["senha"]);
+
+        $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do codigo SQL:" . $mysqli->error);
+
+        $quantidade = $sql_query->num_rows;
+
+        if($quantidade == 1 ){
+
+            $usuario = $sql_query->fetch_assoc();
+
+            if(isset($_SESSION)) {
+                session_start();
+            }
+            $_SESSION['id'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nome'];
+
+            header("Location: trabalho.php");
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -25,13 +53,13 @@ include('acesso.php');
     <form class="formulario" method="post" action="">
     <div class="email">
     <label for="">E-mail:</label>
-    <input type="email" name="email" required>
+    <input type="text" name="email" required>
     </div>
     <div class="senha">
     <label for="">Senha:</label>
     <input type="password" name="senha" required >
     </div>
-    <input class="botao" type="submit" value="Acessar">
+    <button class="botao" type="submit" >Acessar
     </form>
 </body>
 </html>
