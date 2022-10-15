@@ -11,7 +11,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
         $senha = $mysqli->real_escape_string($_POST["senha"]);
 
         $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
-        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do codigo SQL:" . $mysqli->error);
+        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL:" . $mysqli->error);
 
         $quantidade = $sql_query->num_rows;
 
@@ -19,9 +19,10 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 
             $usuario = $sql_query->fetch_assoc();
 
-            if(isset($_SESSION)) {
+            if(!isset($_SESSION)) {
                 session_start();
             }
+
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['nome'] = $usuario['nome'];
 
@@ -47,7 +48,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             <a class="menu-item" href="./index.html">Inicio</a>
             <a class="menu-item" href="./Sobrenós.html">Sobre nós</a>
             <a class="menu-item" href="./Contato.html">Contato</a>
-            <a class="menu-item" href="./funcionarios.php" >Funcionarios</a>
+            <a class="menu-item" href="./funcionarios.php">Funcionarios</a>
     </nav> 
 </header>
     <form class="formulario" method="post" action="">
@@ -57,7 +58,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     </div>
     <div class="senha">
     <label for="">Senha:</label>
-    <input type="password" name="senha" required >
+    <input type="password" name="senha" required>
     </div>
     <button class="botao" type="submit" >Acessar
     </form>
