@@ -38,17 +38,17 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     <meta name="viewport" content="width=device-width, initial-scale=0.30">
     <title >Eco Company</title>
     <link rel='icon' type='image/png' href="./img/Logo_02_Fundo_Transparente.png">
-    <link rel="stylesheet" href="./css/css4.css">
+    <link rel="stylesheet" href="/projetos/Meus_projetos/css/css4.css">
 </head>
 <body>
 <header class="cabecalho">
       <img class="logo" src="./img/Logo_02_Fundo_Transparente.png" alt="">
        
     <nav class="menu">
-            <a class="menu-item" href="./index.html">Inicio</a>
-            <a class="menu-item" href="./Sobrenós.html">Sobre nós</a>
-            <a class="menu-item" href="./Contato.html">Contato</a>
-            <a class="menu-item" href="./funcionarios.php">Funcionarios</a>
+            <a class="menu-item" href="/projetos/Meus_projetos/index.html">Inicio</a>
+            <a class="menu-item" href="/projetos/Meus_projetos/Sobrenós.html">Sobre nós</a>
+            <a class="menu-item" href="/projetos/Meus_projetos/Contato.html">Contato</a>
+            <a class="menu-item" href="/projetos/Meus_projetos/funcionarios.php">Funcionarios</a>
     </nav> 
 </header>
     <form class="formulario" method="post" action="">

@@ -6,6 +6,6 @@ if(!isset($_SESSION)) {
 
 session_destroy();
 
-header("Location: funcionarios.php");
+header("Location: /projetos/Meus_projetos/funcionarios.php");
 
 ?>
