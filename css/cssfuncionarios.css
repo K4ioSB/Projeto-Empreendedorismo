@@ -55,30 +55,83 @@ body{
 .menu-item:hover {
     background-color: rgb(197, 197, 197);
 }
-.formulario {
-    flex-direction: column;
+.conteudo{
+    color: white;
     display: flex;
-    font-size: 22px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    width: 500px;
-    background-color: rgb(39, 129, 47);
-    border: 2px solid  rgb(0, 201, 17);
+    justify-content: center;
+    margin: 20px;
+    
+}
+.titulo{
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.titulo2{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.login{
+    width: 100%;
+    max-width: 600px; 
+    height: 400px;
+    background-color:   rgb(73, 170, 81);
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 2px solid rgb(19, 62, 22);
+}
+.conteudo1 {
+    flex-direction: column;
+    width: 700px;
+    height: 400px;
+    background-color: rgb(73, 170, 81);
+    border: 2px solid  rgb(19, 62, 22);
     border-radius: 10px;
     margin: auto;
     margin-top: 50px;
     padding: 25px;
+    font-family: 'Courier New', Courier, monospace;
 }
-.email{
-    display: inline-block;
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+.field{
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.rodape{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid black ;
+    justify-content: space-around;
+}
+.contato-rodape{
+    display: flex;
     text-align: center;
-}
-.senha{
-    display: inline-block;
-    text-align: center;
-}
-.botao {
+    flex-direction: column;
     margin-top: 10px;
-    color: rgb(0, 0, 0);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgb(2, 212, 19);
+}
+.contatos-menu{
+    list-style: none;
+    text-align: left;
+    margin-top: 5px;
+}
+.texto-rodape {
+    text-align: left;
+    width: 18%;
+    height: auto;
+    margin-top: 10px;
+}
+.endereço-rodape {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
 }
