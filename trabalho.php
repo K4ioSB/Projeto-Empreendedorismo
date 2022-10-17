@@ -14,7 +14,8 @@
     <title>Painel</title>
 </head>
 <body>
-    Bem vindo <?php echo $_SESSION['nome']; ?>. 
+    Bem vindo <?php echo $_SESSION['nome'];
+    ?>. 
 
     <p>
         <a href="logout.php">Sair</a>
