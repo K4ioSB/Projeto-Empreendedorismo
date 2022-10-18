@@ -58,7 +58,7 @@ if (isset($_POST['email'])) {
                 <button class="field" type="submit">Acessar</button>
             </form> 
                 <h2 class="titulo2">Para trabalhar conosco:</h2>
-                <p class="conteudo">Você pode nos mandar um email com seu curriculo anexado (email localizado no rodape de todas as nossas paginas) ou por nossa pagina de contato.</p>
+                <p class="conteudo">Você pode nos mandar um email com seu curriculo anexado (Email da empresa localizado no rodape de todas as nossas paginas) ou por nosso formulário de contato (Basta clicar em 'Contato' no cabeçalho acima).</p>
         </div> 
     </main>
     <footer class="rodape">
