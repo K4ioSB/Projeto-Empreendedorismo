@@ -4,6 +4,11 @@ if (isset($_POST['email'])) {
 
     $email = $_POST['email'];
     $senha = $_POST['senha'];
+   
+/* Essas duas linhas são para criptografia da senha e inserção no banco de dados, após isso retirar do codigo para o funcionamento.
+        $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+        $mysqli->query("INSERT INTO usuarios (email, senha) VALUES('$email', '$senha')"); 
+*/
 
     $sql_code = "SELECT * FROM usuarios WHERE email = '$email' LIMIT 1";
     $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL:" . $mysqli->error);
