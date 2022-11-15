@@ -1,33 +1,38 @@
 <?php
-if (isset($_POST['email'])) {
-    include('acesso.php');
+if (isset($_POST['email'])) { 
+include('acesso.php');
 
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-   
-/* Essas duas linhas são para criptografia da senha e inserção no banco de dados, após isso retirar do codigo para o funcionamento.
-        $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-        $mysqli->query("INSERT INTO usuarios (email, senha) VALUES('$email', '$senha')"); 
-*/
 
-    $sql_code = "SELECT * FROM usuarios WHERE email = '$email' LIMIT 1";
-    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL:" . $mysqli->error);
-       
-    $usuario = $sql_query->fetch_assoc();
-    if(password_verify($senha, $usuario['senha'])){
-        } else {
-            echo "Você Não é um Funcionário"; die;
-        }
+$email = $_POST['email'];
+$senha = md5($_POST['senha']);
+$entrar = $_POST['entrar'];
+$connect = new mysqli ('localhost','root','','login');
 
-    if (!isset($_SESSION)) {
-                session_start();
-            }
+$sql_code = "SELECT * FROM usuarios WHERE email = '$email' LIMIT 1";
+$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL:" . $mysqli->error);
+$usuario = $sql_query->fetch_assoc();
 
-            $_SESSION['id'] = $usuario['id'];
-            $_SESSION['nome'] = $usuario['nome'];
+if(isset($entrar)){
+$verifica = $connect -> query("SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'")
+or die("Erro ao selecionar coluna");
 
-        header("Location: trabalho.php");
-}     
+$rows = $verifica -> num_rows;
+    if($rows <= 0){
+    die('Login e / ou senha incorretos');
+} else{
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    $_SESSION['ID'] = $usuario['ID'];
+    $_SESSION['NOME'] = $usuario['NOME'];
+    $_SESSION['CARGO'] = $usuario['CARGO'];
+    $_SESSION['DATANASC'] = $usuario['DATANASC'];
+    $_SESSION['SALÁRIO'] = $usuario['SALÁRIO'];
+    $_SESSION['SETOR'] = $usuario['SETOR'];
+    header("Location: trabalho.php");}
+} 
+} 
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -57,10 +62,10 @@ if (isset($_POST['email'])) {
             </div>
             <form class="formulario" method="post">
                 <label class="nome" for="">E-mail:</label>
-                <input class="field" type="text" name="email" required>
+                <input class="field" type="text" name="email" required id="email">
                 <label class="nome" for="">Senha:</label>
-                <input class="field" type="password" name="senha" required>
-                <button class="field" type="submit">Acessar</button>
+                <input class="field" type="password" name="senha" required id="senha">
+                <input class="field" type="submit" value="Acessar" name="entrar" id="entrar">
             </form> 
                 <h2 class="titulo2">Para trabalhar conosco:</h2>
                 <p class="conteudo">Você pode nos mandar um email com seu curriculo anexado (Email da empresa localizado no rodape de todas as nossas paginas) ou por nosso formulário de contato (Basta clicar em 'Contato' no cabeçalho acima).</p>
