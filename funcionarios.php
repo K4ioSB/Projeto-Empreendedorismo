@@ -1,4 +1,31 @@
 <?php
+
+if(isset($_FILES['arquivo'])){
+    include('acesso.php');
+    $arquivo = $_FILES['arquivo'];
+
+    if($arquivo['error'])
+    die("Falha ao enviar arquivo");
+
+    if($arquivo['size'] > 2097152)
+    die("arquivo muito grande!! max: 2MB");
+    
+    $pasta = "./img/funcionarios/";
+    $nomedoarquivo = $arquivo['name'];
+    $novoNomedoarquivo = uniqid();
+    $extensao = strtolower(pathinfo($nomedoarquivo, PATHINFO_EXTENSION));
+    
+    if($extensao != "jpg" && $extensao != 'png')
+    die("Tipo de arquivo não aceito");
+
+    $path = $pasta . $novoNomedoarquivo . "." . $extensao;
+    $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
+    if($deu_certo){
+        $mysqli->query("INSERT INTO usuarios (path) VALUES('$path')") or die($mysqli->error);
+        echo "<p>Arquivo enviado com sucesso!</p>";
+    } else
+    echo "<p>Falha ao enviar arquivo</p>";
+}
 if (isset($_POST['email'])) { 
 include('acesso.php');
 
@@ -29,6 +56,7 @@ $rows = $verifica -> num_rows;
     $_SESSION['DATANASC'] = $usuario['DATANASC'];
     $_SESSION['SALÁRIO'] = $usuario['SALÁRIO'];
     $_SESSION['SETOR'] = $usuario['SETOR'];
+    $_SESSION['path'] = $usuario['path'];
     header("Location: trabalho.php");}
 } 
 } 
@@ -60,15 +88,17 @@ $rows = $verifica -> num_rows;
             <div class="header">
                 <h1 class="titulo">Funcionarios</h1>
             </div>
-            <form class="formulario" method="post">
+            <form  class="formulario" method="post">
                 <label class="nome" for="">E-mail:</label>
                 <input class="field" type="text" name="email" required id="email">
                 <label class="nome" for="">Senha:</label>
                 <input class="field" type="password" name="senha" required id="senha">
                 <input class="field" type="submit" value="Acessar" name="entrar" id="entrar">
+            
             </form> 
                 <h2 class="titulo2">Para trabalhar conosco:</h2>
-                <p class="conteudo">Você pode nos mandar um email com seu curriculo anexado (Email da empresa localizado no rodape de todas as nossas paginas) ou por nosso formulário de contato (Basta clicar em 'Contato' no cabeçalho acima).</p>
+                <p>Você pode nos mandar um email com seu curriculo anexado (Email da empresa localizado no rodape de todas as nossas paginas) ou por nosso formulário de contato (Basta clicar em 'Contato' no cabeçalho acima).
+                Se você já possui sua indentificação de funcionario, faça o seu cadastro <a href="./cadastro.php">aqui</a>.</p>
         </div> 
     </main>
     <footer class="rodape">

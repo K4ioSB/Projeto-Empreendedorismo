@@ -28,7 +28,8 @@ include("protecao.php")
 <main class="conteudo">
 <div class="login">
             <div class="header">
-              <h3 class="titulo">Bem vindo <?php echo $_SESSION['NOME'];?>.</h3>
+                <img height="300" style="margin-left: 15%; border: 2px solid black;" src="<?php echo $_SESSION['path'];?>" alt="">
+                <h3 class="titulo">Bem vindo <?php echo $_SESSION['NOME'];?>.</h3>
             </div>
             <p class="informacoes">
                 <li>Setor: <?php echo $_SESSION['SETOR'];?></li>
@@ -37,10 +38,8 @@ include("protecao.php")
                 <li>Data Nascimento: <?php echo $_SESSION['DATANASC'];?></li> 
                 <li>Id de funcionário: <?php echo $_SESSION['ID'];?></li>
                 <button class="conteudo-principal-botao"><a class="botao" href="logout.php">Sair</a></button>
-                
             </p>
-            
-        </div> 
+        </div>
 </main>
 </body>
 </html>
