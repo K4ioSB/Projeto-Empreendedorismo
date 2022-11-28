@@ -98,7 +98,7 @@ $rows = $verifica -> num_rows;
             </form> 
                 <h2 class="titulo2">Para trabalhar conosco:</h2>
                 <p>Você pode nos mandar um email com seu curriculo anexado (Email da empresa localizado no rodape de todas as nossas paginas) ou por nosso formulário de contato (Basta clicar em 'Contato' no cabeçalho acima).
-                Se você já possui sua indentificação de funcionario, faça o seu cadastro <a href="./cadastro.php">aqui</a>.</p>
+                </p>
         </div> 
     </main>
     <footer class="rodape">
