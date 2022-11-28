@@ -14,6 +14,7 @@ if(isset($_FILES['arquivo'])){
     $nome = $_POST['nome'];
     $id = $_POST['id'];
     $datanasc = $_POST['datanasc'];
+    $salario = $_POST['salario'];
     $cargo = $_POST['cargo'];
     $setor = $_POST['setor'];
     $pasta = "./img/funcionarios/";
@@ -27,7 +28,7 @@ if(isset($_FILES['arquivo'])){
     $path = $pasta . $novoNomedoarquivo . "." . $extensao;
     $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
     if($deu_certo){
-        $mysqli->query("INSERT INTO usuarios (EMAIL, SENHA, NOME, ID, DATANASC, CARGO, SETOR, path) VALUES('$email','$senha','$nome','$id','$datanasc','$cargo','$setor','$path')") or die($mysqli->error);
+        $mysqli->query("INSERT INTO usuarios (EMAIL, SENHA, NOME, ID, DATANASC,SALÁRIO, CARGO, SETOR, path) VALUES('$email','$senha','$nome','$id','$datanasc','$salario','$cargo','$setor','$path')") or die($mysqli->error);
     } else
     echo "<p>Falha ao enviar arquivo</p>";
 }
@@ -67,6 +68,8 @@ if(isset($_FILES['arquivo'])){
         <input class="field" placeholder="Sua Senha" type="text" name="senha" id="senha">
         <label class="nome">Data de Nascimento</label>
         <input class="field" placeholder="Sua Data de Nascimento" type="text" name="datanasc" id="datanasc">
+        <label class="nome">Salário</label>
+        <input class="field" placeholder="Seu Salário" type="text" name="salario" id="salario">
         <label class="nome">Seu Cargo</label>
         <input class="field" placeholder="Seu Cargo" type="text" name="cargo" id="cargo">
         <label class="nome">Seu Setor</label>
