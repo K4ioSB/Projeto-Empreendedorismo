@@ -28,7 +28,7 @@ include("protecao.php")
 <main class="conteudo">
 <div class="login">
             <div class="header">
-                <img height="300" style="margin-left: 15%; border: 2px solid black;" src="<?php echo $_SESSION['path'];?>" alt="">
+                <img height="auto" width="350" style="margin-left: 12%; border: 2px solid black;" src="<?php echo $_SESSION['path'];?>" alt="">
                 <h3 class="titulo">Bem vindo(a) <?php echo $_SESSION['NOME'];?>.</h3>
             </div>
             <p class="informacoes">
