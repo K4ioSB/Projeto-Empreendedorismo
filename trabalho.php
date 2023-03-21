@@ -29,7 +29,7 @@ include("protecao.php")
 <div class="login">
             <div class="header">
                 <img height="300" style="margin-left: 15%; border: 2px solid black;" src="<?php echo $_SESSION['path'];?>" alt="">
-                <h3 class="titulo">Bem vindo <?php echo $_SESSION['NOME'];?>.</h3>
+                <h3 class="titulo">Bem vindo(a) <?php echo $_SESSION['NOME'];?>.</h3>
             </div>
             <p class="informacoes">
                 <li>Setor: <?php echo $_SESSION['SETOR'];?></li>
