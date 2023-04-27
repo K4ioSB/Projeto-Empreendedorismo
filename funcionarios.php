@@ -57,7 +57,7 @@ $rows = $verifica -> num_rows;
     $_SESSION['SALÁRIO'] = $usuario['SALÁRIO'];
     $_SESSION['SETOR'] = $usuario['SETOR'];
     $_SESSION['path'] = $usuario['path'];
-    header("Location: trabalho.php");}
+    header("Location: painel.php");}
 } 
 } 
 
@@ -79,8 +79,9 @@ $rows = $verifica -> num_rows;
         <nav class="menu">
             <a class="menu-item" href="./index.html">Inicio</a>
             <a class="menu-item" href="./Sobrenós.html">Sobre nós</a>
-            <a class="menu-item" href="./Contato.html">Contato</a>
+            <a class="menu-item" href="./Contato.php">Contato</a>
             <a class="menu-item" href="./funcionarios.php">Entrar</a>
+            <a class="menu-item" href="./cadastro.php" >Cadastrar</a>
         </nav>
     </header>
     <main class="conteudo">

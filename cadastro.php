@@ -1,5 +1,8 @@
+
+<?php
+/*
 Codigo SQL para a tabela no banco de dados:
-CREATE TABLE `usuarios2` (
+CREATE TABLE `usuarios` (
    `ID` int(15) PRIMARY KEY NOT NULL,
   `NOME` varchar(255) NOT NULL,
   `CARGO` varchar(255) NOT NULL,
@@ -10,8 +13,8 @@ CREATE TABLE `usuarios2` (
   `EMAIL` varchar(255) NOT NULL,
   `SENHA` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+*/
 
-<?php
 include('acesso.php');
 if(isset($_FILES['arquivo'])){
     include('acesso.php');
@@ -25,7 +28,6 @@ if(isset($_FILES['arquivo'])){
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
     $nome = $_POST['nome'];
-    $id = $_POST['id'];
     $datanasc = $_POST['datanasc'];
     $salario = $_POST['salario'];
     $cargo = $_POST['cargo'];
@@ -41,9 +43,13 @@ if(isset($_FILES['arquivo'])){
     $path = $pasta . $novoNomedoarquivo . "." . $extensao;
     $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
     if($deu_certo){
-        $mysqli->query("INSERT INTO usuarios (EMAIL, SENHA, NOME, ID, DATANASC,SALÁRIO, CARGO, SETOR, path) VALUES('$email','$senha','$nome','$id','$datanasc','$salario','$cargo','$setor','$path')") or die($mysqli->error);
+        $mysqli->query("INSERT INTO usuarios (EMAIL, SENHA, NOME, DATANASC,SALÁRIO, CARGO, SETOR, path) VALUES('$email','$senha','$nome','$datanasc','$salario','$cargo','$setor','$path')") or die($mysqli->error);
     } else
     echo "<p>Falha ao enviar arquivo</p>";
+   
+      header("Location: funcionarios.php");
+      
+      mysqli_close($conn);
 }
 ?>
 <!DOCTYPE html>
@@ -63,34 +69,36 @@ if(isset($_FILES['arquivo'])){
     <nav class="menu">
             <a class="menu-item" href="./index.html">Inicio</a>
             <a class="menu-item" href="./sobrenos.html">Sobre nós</a>
-            <a class="menu-item" href="./contato.html">Contato</a>
+            <a class="menu-item" href="./contato.php">Contato</a>
             <a class="menu-item" href="./funcionarios.php" >Entrar</a>
+            <a class="menu-item" href="./cadastro.php" >Cadastrar</a>
     </nav> 
 </header>
     <main class="conteudo">
         <div class="cadastro">
      <form enctype="multipart/form-data" class="formulario" method="post">
-        <p> 
-        <label class="nome">Id de Funcionario</label>
-        <input class="field" placeholder="Sua ID" type="text" name="id" id="id">
+        <p>
         <label class="nome">Nome</label>
         <input class="field" placeholder="Seu nome" type="text" name="nome" id="nome">
         <label class="nome">E-mail</label>
         <input class="field" placeholder="Seu e-mail" type="email" name="email" id="email">
         <label class="nome">Senha</label>
         <input class="field" placeholder="Sua Senha" type="text" name="senha" id="senha">
-        <label class="nome">Data de Nascimento</label>
-        <input class="field" placeholder="Sua Data de Nascimento" type="text" name="datanasc" id="datanasc">
-        <label class="nome">Salário</label>
-        <input class="field" placeholder="Seu Salário" type="text" name="salario" id="salario">
-        <label class="nome">Seu Cargo</label>
-        <input class="field" placeholder="Seu Cargo" type="text" name="cargo" id="cargo">
         <label class="nome">Seu Setor</label>
         <input class="field" placeholder="Seu Setor" type="text" name="setor" id="setor">
+        <label class="nome">Seu Cargo</label>
+        <input class="field" placeholder="Seu Cargo" type="text" name="cargo" id="cargo"> 
+        <label class="nome">Salário</label>
+        <input class="field" placeholder="Seu Salário" type="text" name="salario" id="salario">
+        <label class="nome">Data de Nascimento</label>
+        <input class="field" placeholder="Sua Data de Nascimento" type="text" name="datanasc" id="datanasc">
+       
+        
+        
         <label class="nome" for="">Foto do Funcionario</label>
         <input class="field" name="arquivo" type="file">  
         </p>
-            <button class="field" name="upload" type="submit"><a href="funcionarios.php">Enviar</a></button>
+            <button class="field" name="upload" type="submit">Enviar</button>
      </form>
         </div>
     </main>

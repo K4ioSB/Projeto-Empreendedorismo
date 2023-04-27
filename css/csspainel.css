@@ -61,21 +61,18 @@ body{
     font-family: 'Courier New', Courier, monospace;
     margin-bottom: 10px;
 }
+
 .conteudo {
-    width: 500px;
+    width: 600px;
     height: auto;
     color: white;
     background-color: rgb(73, 170, 81);
     border: 2px solid  rgb(19, 62, 22);
     border-radius: 10px;
-    margin: auto;
     margin-top: 50px;
-    padding: 25px;
     font-family: 'Courier New', Courier, monospace;
 }
-li{
-    text-align: center;
-}
+
 .conteudo-principal-botao {
     font-size: 20px;
     background-color: #ffffff;
