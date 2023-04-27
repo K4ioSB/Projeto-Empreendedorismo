@@ -63,11 +63,13 @@ body{
 }
 
 .conteudo {
-    width: 600px;
+    width: 500px;
     height: auto;
     color: white;
     background-color: rgb(73, 170, 81);
     border: 2px solid  rgb(19, 62, 22);
+    margin: auto;
+    padding: 25px;
     border-radius: 10px;
     margin-top: 50px;
     font-family: 'Courier New', Courier, monospace;

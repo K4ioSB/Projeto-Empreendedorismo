@@ -33,7 +33,7 @@ include("protecao.php");
           <img height="auto" width="350" style="margin-left: 12%; border: 2px solid black;" src="<?php echo $_SESSION['path']; ?>" alt="">
         </div>
         <div >
-          <ul style="list-style-type: none;">
+          <ul >
           <li>Setor: <?php echo $_SESSION['SETOR'];?></li>
           <li>Cargo: <?php echo $_SESSION['CARGO'];?></li>
           <li>Salário: <?php echo $_SESSION['SALÁRIO'];?></li>
