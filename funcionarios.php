@@ -102,22 +102,6 @@ $rows = $verifica -> num_rows;
                 </p>
         </div> 
     </main>
-    <footer class="rodape">
-    <div class="contato-rodape">
-    <h4 class="titulo-contatos">Contatos</h4>
-    <Ul class="contatos-menu">
-        <li>Fixo: (11)3486-6883/ 0800 486 688</li>
-        <li>Celular: (11) 97595-1022</li>
-        <li>Email: ecocompany.ltda.br@gmail.com</li>
-    </Ul>
-    </div>
-    <p class="texto-rodape">
-    Na Eco Company, não ignoramos os erros do passado, já aprendemos com eles. 
-    E vamos utilizar as tecnologias do "futuro" para garantir o amanhã.</p>
-    <div class="endereço-rodape" >
-    <h4>Endereço</h4>
-    <p>Rua Dr Rodrigo Silva, 58, Liberdade, São Paulo-SP. CEP: 01501-010</p>
-    </div>
-    </footer>
+   
 </body>
 </html>

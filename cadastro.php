@@ -101,6 +101,9 @@ if(isset($_FILES['arquivo'])){
             <button class="field" name="upload" type="submit">Enviar</button>
      </form>
         </div>
+
+        
     </main>
+  
 </body>
 </html>
