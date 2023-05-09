@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic&family=Gowun+Batang:wght@700&display=swap');
 *{
     padding: 0;
-    margin: 0;
+    margin: 0px 0px;
     box-sizing: border-box;
     text-decoration: none;
 }
@@ -19,7 +19,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 4px;
     width: 100%;
     background: linear-gradient(270deg , rgb(96, 183, 103) 0%, black 100% );
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -69,12 +69,12 @@ body{
 .empresa{
     display: flex;
     margin-top: 10px;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .empresa img{
-    width: 400px;
-    height: 500px;
-    margin-left: 20px;
+    width: 330px;
+    height: 597px;
+    margin: 0px;
     border: 2px solid white;
     border-radius: 10px;
 }
@@ -85,9 +85,11 @@ body{
 .primeiro-p{
     display: flex;
     text-align: center;
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 600px; 
+    margin: -8px;
+    font-size: 16px;
+    margin-left: 7px;
+    margin-right: 7px;
+    width: 625px;
 }
 .segundo-p{
     display: flex;
@@ -103,8 +105,8 @@ body{
     border-radius: 10px;
     box-shadow: 1px 1px 12px 6px rgba(0,0,0,0.4);
     background-color: white;
-    margin: 10px;
-    width: 15%;
+    margin: 0px 5px;
+    width: 17%;
     height: auto;
 }
 .conteudo-titulo{
@@ -121,14 +123,15 @@ body{
 }
 .imagem img{
     margin-top: 30px;
-    width: 600px;
+    width: 590px;
     height: auto;
     border-radius: 10px;
     border: 1px solid;
 }
 .conteudo-secundario{
     color: white;
-    margin-top: 10px; 
+    margin-top: 10px;
+    margin: 40px 15px 14px 52px;
     flex-direction: row;
     display: flex;
 }
@@ -139,6 +142,8 @@ body{
 }
 .terceiro-p{
     margin: 10px;
+    padding: 0px 55px;
+    font-size: 16px;
     text-align: center;
 }
 .botao1{
@@ -178,7 +183,9 @@ body{
     color: white;
     display: flex;
     flex-direction: row;
-    border-top: 1px solid black ;
+    margin: 15px;
+    padding: 10px;
+    border-top: 1px solid black;
     justify-content: space-around;
 }
 .contato-rodape{
@@ -196,6 +203,7 @@ body{
     text-align: left;
     width: 18%;
     height: auto;
+    padding: 5px;
     margin-top: 10px;
 }
 .endereço-rodape {
