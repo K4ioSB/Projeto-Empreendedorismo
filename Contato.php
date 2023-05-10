@@ -1,4 +1,13 @@
 <?php
+/*
+CREATE TABLE `contatos` (
+  `NOME` varchar(100) NOT NULL,
+  `EMAIL` varchar(100) NOT NULL,
+  `PHONE` varchar(30) NOT NULL,
+  `ASSUNTO` varchar(30) NOT NULL,
+  `MENSAGEM` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+*/
 include('acesso.php');
 
   if (isset($_POST['email'])) {
