@@ -1,5 +1,6 @@
 <?php
 /*
+Codigo SQL para a tabela no banco de dados:
 CREATE TABLE `contatos` (
   `NOME` varchar(100) NOT NULL,
   `EMAIL` varchar(100) NOT NULL,
