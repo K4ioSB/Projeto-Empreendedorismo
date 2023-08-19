@@ -9,6 +9,9 @@ CREATE TABLE `contatos` (
   `MENSAGEM` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 */
+$ php Contato.php
+
+$ php -f Contato.php
 include('acesso.php');
 
   if (isset($_POST['email'])) {
